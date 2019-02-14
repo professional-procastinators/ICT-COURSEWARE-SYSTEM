@@ -1,0 +1,42 @@
+body{
+    display: grid;
+    position: relative;
+}
+.jumbotron{
+    background-color: rgb(211, 211, 255);
+}
+
+#btn-vid{
+    margin-top: 70px;
+}
+
+#txtA{
+    text-indent: 30px;
+}
+
+.modal-content {
+    z-index: 1;
+}
+
+#txtB{
+    margin-left: 80px;
+    text-indent: 40px;
+    text-align: justify;
+    font-size: 1.50rem;
+}
+
+.card{
+    padding: 10px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.card-deck{
+    padding: 10px;
+    width: 100%;
+}
+
+p{
+    text-indent: 40px;
+    text-align: justify;
+}
