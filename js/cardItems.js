@@ -1,3 +1,4 @@
+
 function loadCards(inputLessonItems) {
     for (var i = 0; i < inputLessonItems.length; i++) {
         // $(".container-fuild").append(`<div class="card"><div class="col-sm-4">`).append(`<div class="card">`).append(`<img class="card-img-top" src="${items[i].imageSource}" alt="Card image cap"><h4 class="card-header">Microphone</h4><div class="card-body">`).append(`<p class="card-text">${items[i].description}</p><a href="#" class="btn btn-primary">Show Lesson</a>`);
@@ -12,7 +13,7 @@ function loadCards(inputLessonItems) {
                     </div>
                 </div>`;
         $('.card-deck').append(cardString);
-                
+
         //load modal
         var modalString = `
         <div class="modal fade animated bounceInLeft" id="${i}">
@@ -23,34 +24,18 @@ function loadCards(inputLessonItems) {
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <p class="lead">${inputLessonItems[i].full_description}
-                        </p>
-
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img src="..." class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div id="${i+100}" class="carousel slide" data-ride="carousel">
+                         <div class="carousel-inner">
+                         ${populateImageSources(inputLessonItems[i].images)}
+                         </div>
+                          <a class="carousel-control-prev" href="#${i+100}" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#${i+100}" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                           </a>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -61,6 +46,17 @@ function loadCards(inputLessonItems) {
         </div>`;
         $(".card-deck").append(modalString);
     }
+}
+function populateImageSources(imageSourceArray) {
+    let string = `<div class="carousel-item active">
+    <img src="${imageSourceArray[0]}" class="d-block w-100">
+    </div>`;
+    for (let i = 1; i < imageSourceArray.length; i++) {
+        string += `<div class="carousel-item">
+        <img src="${imageSourceArray[i]}" class="d-block w-100">
+        </div>`;
+    }
+    return string;
 }
 $(document).ready(() => {
     loadCards(inputLessonItems);
