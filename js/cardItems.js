@@ -4,13 +4,13 @@ function loadCards(inputLessonItems) {
         // $(".container-fuild").append(`<div class="card"><div class="col-sm-4">`).append(`<div class="card">`).append(`<img class="card-img-top" src="${items[i].imageSource}" alt="Card image cap"><h4 class="card-header">Microphone</h4><div class="card-body">`).append(`<p class="card-text">${items[i].description}</p><a href="#" class="btn btn-primary">Show Lesson</a>`);
         var cardString = `
                 <div class="col-sm-4">
-                    <div class="card animated zoomIn">
-                        <img id="${inputLessonItems[i].name}" class="card-img-top" src="${inputLessonItems[i].imageSource}" alt="Card image cap" data-toggle="modal" data-target="#${i}">
-                        <h4 class="card-header fontsforweb_fontid_9785">${inputLessonItems[i].name}</h4>
-                            <div class="card-body">
-                                <p class="card-text lead">${inputLessonItems[i].description}</p>
-                            </div>
-                    </div>
+                        <div class="card animated zoomIn">
+                            <img id="${inputLessonItems[i].name}" class="card-img-top" src="${inputLessonItems[i].imageSource}" alt="Card image cap" data-toggle="modal" data-target="#${i}">
+                            <h4 class="card-header fontsforweb_fontid_9785">${inputLessonItems[i].name}</h4>
+                                <div class="card-body">
+                                    <p class="card-text lead">${inputLessonItems[i].description}</p>
+                                </div>
+                        </div>
                 </div>`;
         $('.card-deck').append(cardString);
 
@@ -37,6 +37,7 @@ function loadCards(inputLessonItems) {
                            <span class="sr-only">Next</span>
                            </a>
                         </div>
+                        <p class="lead">${inputLessonItems[i].full_description}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

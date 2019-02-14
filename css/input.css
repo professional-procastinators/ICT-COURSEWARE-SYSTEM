@@ -26,7 +26,6 @@ body{
 }
 
 .card{
-    padding: 10px;
     margin-bottom: 10%;
     margin-top: 10%;
 }
@@ -35,9 +34,16 @@ body{
     padding: 10px;
     width: 100%;
 }
+.card-body{
+  height: 150px;
+  width: 100%;
+}
 
 .card-img-top{
     cursor: pointer;
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 p{
@@ -94,3 +100,5 @@ p{
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+
