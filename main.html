@@ -24,20 +24,25 @@
 
             <a data-toggle="modal" data-target=".bd-example-modal-lg"><img src="img/vid.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right"
                     id="img-vid"></a>
-            <h1 class="display-4 animated fadeIn slow" id="txt-vid">Instructional Videos</h1>
+            <h1 class="display-4 animated fadeIn slow" id="txt-vid">Instructional Video</h1>
             <!--MODAL-->
             <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
+                aria-hidden="false">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <!--<iframe  id="cartoonVideo" src="ICT_VIDEO.mp4" frameborder="0" preload="none"></iframe>-->
-                                <video id="cartoonVideo" controls>
-                                    <source src="TCSHS_ICTVID.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
+                            <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                <div class="modal-body">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <!--<iframe  id="cartoonVideo" src="ICT_VIDEO.mp4" frameborder="0" preload="none"></iframe>-->
+                                        <video id="cartoonVideo" controls>
+                                            <source src="TCSHS_ICTVID.mp4" type="video/mp4">
+                                        </video>
+                                        
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +60,7 @@
             <a><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="st-menu"></a>
             <h1 class="display-4 animated zoomIn" id="txt-str">Storage Devices</h1>
 
-            <a href="input.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
+            <a href="main.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
         </div>
         <div class="quiz">
             <a><button type="button" class="btn btn-secondary" id="quiz-back">Back</button></a>
