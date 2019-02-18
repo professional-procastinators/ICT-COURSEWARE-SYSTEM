@@ -3,7 +3,7 @@ var inputLessonItems = [{
     description: "A keyboard is used to enter data into a computer or other device.",
     imageSource: "img/keyboard-int.jpg",
     full_description: "A computer keyboard is one of the primary input devices used with a computer. Similar to an electric typewriter, a keyboard is composed of buttons that create letters, numbers, and symbols, as well as perform other functions. A keyboard uses labeled buttons as input switches. The standard QWERTY keyboard is the commonest way to enter text and numerical data into a computer. A keyboard uses labeled buttons as input switches. The standard QWERTY keyboard is the commonest way to enter text and numerical data into a computer. Alternatives to fixed layouts include overlay keyboards and touch screen keyboards, both allowing easy customization.",
-    images: [{image: "img/input/Keyboard/1.jpg",caption: "This is a Typewriter"},{image:"img/input/Keyboard/2.jpg",caption: "caption number fucking 2"},{image: "img/input/Keyboard/3.jpg",caption: "caption number fucking 3"}]
+    images: [{image: "img/input/Keyboard/1.jpg",name:"Typewriter",caption: "This is a Typewriter"},{image:"img/input/Keyboard/2.jpg",name:"Gaming Keyboard",caption: "caption number fucking 2"},{image: "img/input/Keyboard/3.jpg",caption: "caption number fucking 3"}]
 },
 
 {
@@ -18,7 +18,7 @@ var inputLessonItems = [{
     description: "A digital camera stores images digitally rather than recording them on film.",
     imageSource: "img/camera-int.jpg",
     full_description: "full description of camera",
-    images: [{image:"img/input/Camera/1.jpg", caption:"caption for camera"},{image:"img/input/Camera/2.jpg", caption:"we found love right where we are"}, {image:"img/input/Camera/3.jpg",caption:"verypoor and sad"},{image:"img/input/Camera/4.jpg", caption:"atik ra"}]
+    images: [{image:"img/input/Camera/1.jpg", name:"Analog electronic camera", caption:"recorded pixel signals continuously, as videotape machines did, without converting them to discrete levels"},{image:"img/input/Camera/2.jpg", name:"Digital Camera",caption:"we found love right where we are"}, {image:"img/input/Camera/3.jpg",caption:"verypoor and sad"},{image:"img/input/Camera/4.jpg", caption:"atik ra"}]
 },
 {
     name: "Microphone",
