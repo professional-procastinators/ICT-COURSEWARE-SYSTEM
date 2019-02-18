@@ -52,7 +52,7 @@ function populateImageSources(lessonItem) {
     let string = `<div class="carousel-item active">
     <img src="${lessonItem.images[0].image}" class="d-block w-100">
     <div class="carousel-caption">
-    <h3>A fucking ${lessonItem.name}</h3>
+    <h3> ${lessonItem.name}</h3>
     <p>${lessonItem.images[0].caption}</p>
     </div>
     </div>`;
@@ -60,8 +60,8 @@ function populateImageSources(lessonItem) {
         string += 
         `<div class="carousel-item">
           <img src="${lessonItem.images[i].image}" class="d-block w-100">
-          <div class="carousel-caption">
-             <h3>A fucking ${lessonItem.name}</h3>
+          <div class="carousel-caption d-none d-md-block">
+             <h3>${lessonItem.name}</h3>
              <p>${lessonItem.images[i].caption}</p>
              </div>
         </div>`;
