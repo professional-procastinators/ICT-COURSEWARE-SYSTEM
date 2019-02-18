@@ -1,5 +1,5 @@
 * {
-    color: white;
+    color: #463b3b;
     }
 
     body{
@@ -188,6 +188,11 @@
         left: 20%;
         top: 70%;
         cursor: pointer;
+    }
+    button.close {
+        z-index: 999;
+        right: 30px;
+        top: 15px;
     }
 
     
