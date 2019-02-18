@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/fancybox.css">
     <link rel="stylesheet" href="css/hover.min.css">
+    <link rel="stylesheet" href="./alima/sweetalert2.min.css">
+    <script src="./alima/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -81,10 +83,22 @@
                         $("#selectedQuiz").attr("value", e.target.id);
 
                         //gets the localstorage map and checks if the student have looked into all lessons
-                        let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonMap"));
+                        let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonsMap"));
                         let inputLessonsMap = new Map(inputLessonsArray.map(i=>[i[0],i[1]]));
                         if(inputLessonsMap.get('haveFinishedAll')===true)
                         $("#form").submit();
+                    });
+                    $(".row").find('img').click((e) => {
+                        console.log("you clicked on lessons folder");
+                        if(JSON.parse(localStorage.getItem("isTakingQuiz"))===true){
+                            Swal.fire({
+                    title: `You can't do that.`,
+                    text: `You're currently taking a quiz, you can't access the lessons yet.`,
+                    type: 'confirm'
+                }).then(() => {
+                    window.location.href = "main.html";
+                })
+                        }
                     });
                     // $("#quizbutton").click((e)=>{
                     //     $("#selectedQuiz").attr("value",$(this).attr("value"));
