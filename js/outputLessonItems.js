@@ -1,6 +1,6 @@
 var outputLessonItems = [{
     name: "Printer",
-    description: "A keyboard is used to enter data into a computer or other device.",
+    description: "A printer is an external hardware output device that takes the electronic data stored on a computer and generates a hard copy of it.",
     imageSource: "img/printer-out.png",
     full_description: "A computer keyboard is one of the primary input devices used with a computer. Similar to an electric typewriter, a keyboard is composed of buttons that create letters, numbers, and symbols, as well as perform other functions. A keyboard uses labeled buttons as input switches. The standard QWERTY keyboard is the commonest way to enter text and numerical data into a computer",
     images: [{image: "img/input/Keyboard/1.jpg",caption: "caption number fucking 1"},{image:"img/input/Keyboard/2.jpg",caption: "caption number fucking 2"},{image: "img/input/Keyboard/3.jpg",caption: "caption number fucking 3"},{image: "img/input/Keyboard/4.jpg",caption: "caption number fucking 4"},{image: "img/input/Keyboard/5.jpg",caption: "caption number fucking 5"}]
@@ -8,24 +8,24 @@ var outputLessonItems = [{
 
 {
     name: "Monitor",
-    description: "A mouse is a device that controls the movement of the cursor or pointer on a display screen.",
-    imageSource: "img/monitor.png",
+    description: "A monitor is an output device that displays video images and text.",
+    imageSource: "img/monitor.jpg",
     full_description: "full description of mouse",
     images: [{image:"img/input/Mouse/1.jpg", caption:"hello fsdkflskjg"},{image:"img/input/Mouse/2.jpg", caption:"healkhasd"},{image:"img/input/Mouse/3.jpg", caption:"asdkhfjshadgkjdsg"}]
 },
 {
     name: "Headphones",
-    description: "A digital camera stores images digitally rather than recording them on film.",
+    description: "A headphone is an output device that either plug into your computer line out or your speakers. ",
     imageSource: "img/headphones-out.jpg",
     full_description: "full description of camera",
-    images: [{image:"img/input/Camera/1.jpg", caption:"caption for camera"},{image:"img/input/Camera/2.jpg", caption:"we found love right where we are"}, {image:"img/input/Camera/3.jpg",caption:"verypoor and sad"},{image:"img/input/Camera/4.jpg", caption:"atik ra"}]
+    images: [{image:"img/input/Microphone/1.jpg",name:"",caption:""},{image:"img/input/Microphone/2.jpg",name:"",caption:""}]
 },
 {
     name: "Speakers",
     description: "A microphone is a device that captures audio by converting sound waves into an electrical signal.",
     imageSource: "img/speakers.jpg",
     full_description: "full description of microphones",
-    images: ["img/input/Microphone/1.jpg","img/input/Microphone/2.jpg","img/input/Microphone/3.jpg","img/input/Microphone/4.jpg"]
+    images: [{image:"img/input/Microphone/1.jpg",name:"",caption:""},{image:"img/input/Microphone/2.jpg",name:"",caption:""}]
 }
 ];
 

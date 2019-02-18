@@ -23,6 +23,7 @@ function loadCards(lessonItems) {
                         <h4 class="modal-title fontsforweb_fontid_9785">What is a ${lessonItems[i].name}?</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
+                    <br>
                     <div class="modal-body">
                         <div id="${i+100}" class="carousel slide" data-ride="carousel">
                          <div class="carousel-inner">
@@ -51,9 +52,9 @@ function loadCards(lessonItems) {
 function populateImageSources(lessonItem) {
     let string = `<div class="carousel-item active">
     <img src="${lessonItem.images[0].image}" class="d-block w-100">
-    <div class="carousel-caption">
-    <h3> ${lessonItem.images[0].name}</h3>
-    <p>${lessonItem.images[0].caption}</p>
+    <div class="carousel-caption ">
+    <h3 class="fontsforweb_fontid_9785"> ${lessonItem.images[0].name}</h3>
+    <p class="lead">${lessonItem.images[0].caption}</p>
     </div>
     </div>`;
     for (let i = 1; i < lessonItem.images.length; i++) {
@@ -61,8 +62,8 @@ function populateImageSources(lessonItem) {
         `<div class="carousel-item">
           <img src="${lessonItem.images[i].image}" class="d-block w-100">
           <div class="carousel-caption d-none d-md-block">
-             <h3>${lessonItem.images[i].name}</h3>
-             <p>${lessonItem.images[i].caption}</p>
+             <h3 class="fontsforweb_fontid_9785">${lessonItem.images[i].name}</h3>
+             <p class="lead">${lessonItem.images[i].caption}</p>
              </div>
         </div>`;
     }
