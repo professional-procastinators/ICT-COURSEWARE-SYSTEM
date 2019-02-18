@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/fancybox.css">
     <link rel="stylesheet" href="css/hover.min.css">
+    <link rel="stylesheet" href="./alima/sweetalert2.min.css">
+    <script src="./alima/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -24,20 +26,25 @@
 
             <a data-toggle="modal" data-target=".bd-example-modal-lg"><img src="img/vid.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right"
                     id="img-vid"></a>
-            <h1 class="display-4 animated fadeIn slow" id="txt-vid">Instructional Videos</h1>
+            <h1 class="display-4 animated fadeIn slow" id="txt-vid">Instructional Video</h1>
             <!--MODAL-->
             <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
+                aria-hidden="false">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <!--<iframe  id="cartoonVideo" src="ICT_VIDEO.mp4" frameborder="0" preload="none"></iframe>-->
-                                <video id="cartoonVideo" controls>
-                                    <source src="TCSHS_ICTVID.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
+                            <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                <div class="modal-body">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <!--<iframe  id="cartoonVideo" src="ICT_VIDEO.mp4" frameborder="0" preload="none"></iframe>-->
+                                        <video id="cartoonVideo" controls>
+                                            <source src="TCSHS_ICTVID.mp4" type="video/mp4">
+                                        </video>
+                                        
+                                    </div>
+                                </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +62,7 @@
             <a><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="st-menu"></a>
             <h1 class="display-4 animated zoomIn" id="txt-str">Storage Devices</h1>
 
-            <a href="input.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
+            <a href="main.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
         </div>
         <div class="quiz">
             <a><button type="button" class="btn btn-secondary" id="quiz-back">Back</button></a>
@@ -76,10 +83,22 @@
                         $("#selectedQuiz").attr("value", e.target.id);
 
                         //gets the localstorage map and checks if the student have looked into all lessons
-                        let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonMap"));
+                        let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonsMap"));
                         let inputLessonsMap = new Map(inputLessonsArray.map(i=>[i[0],i[1]]));
                         if(inputLessonsMap.get('haveFinishedAll')===true)
                         $("#form").submit();
+                    });
+                    $(".row").find('img').click((e) => {
+                        console.log("you clicked on lessons folder");
+                        if(JSON.parse(localStorage.getItem("isTakingQuiz"))===true){
+                            Swal.fire({
+                    title: `You can't do that.`,
+                    text: `You're currently taking a quiz, you can't access the lessons yet.`,
+                    type: 'confirm'
+                }).then(() => {
+                    window.location.href = "main.html";
+                })
+                        }
                     });
                     // $("#quizbutton").click((e)=>{
                     //     $("#selectedQuiz").attr("value",$(this).attr("value"));

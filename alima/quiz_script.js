@@ -82,9 +82,7 @@ function loadNextQuestion(questionsArray) {
             }).then(() => {
                 localStorage.clear();
                 window.location.href = "../main.html";
-            })
-
-                ;
+            });
         }
         return;
     }

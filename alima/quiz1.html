@@ -40,6 +40,9 @@
     <script src="quiz_script.js"></script>
     <script>
         var shuffledQuestions;
+        if(localStorage.getItem("isTakingQuiz")===null)
+            localStorage.setItem("isTakingQuiz","true");
+            console.log("istaking quiz has been set up");
         $(document).ready(() => {
             if(localStorage.getItem("shuffledQuestions")!==null){
                 console.log(`questionIndex: ${localStorage.getItem("questionIndex")}`);
