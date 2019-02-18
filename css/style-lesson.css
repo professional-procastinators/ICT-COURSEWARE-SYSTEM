@@ -14,7 +14,7 @@
     section#particles-js {
         flex: 1;
         height: 100vh;
-        background: url(menu.png);
+        background: url(menu-bg.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
