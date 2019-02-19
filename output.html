@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="fonts/font.css">
     <link rel="stylesheet" href="css/lesson.css">
     <link rel="stylesheet" href="css/hover.min.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="./alima/sweetalert2.min.css">
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="./bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-    <script src="./js/cardItems.js"></script>
     <script src="./js/outputLessonItems.js"></script>
+    <script src="./js/cardItems.js"></script>
     <script src="./js/userSession.js"></script>
+    <script src="./alima/sweetalert2.all.min.js"></script>
 
 </head>
 
@@ -24,9 +25,9 @@
     <!--NAVIGATION-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="input.html">Input Devices</a>
-        <a href="output.html">Output Devices</a>
-        <a href="storage.html">Storage Device</a>
+        <a href="input.html " onclick="location.href=this.href+'?key1=0';return false;">Input Devices</a>
+        <a href="output.html" onclick="location.href=this.href+'?key1=1';return false;">Output Devices</a>
+        <a href="storage.html" onclick="location.href=this.href+'?key1=2';return false;">Storage Device</a>
         __________________________________
         <br>
         <a href="main.html">Main Menu</a>
@@ -35,7 +36,7 @@
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; LESSONS</span>
     <div id="main">
         <div class="jumbotron animated zoomIn delay 1s">
-            <h1 class="display-3 fontsforweb_fontid_9785">Output Devices</h1>
+            <h1 class="display-3 fontsforweb_fontid_9785">Output devices</h1>
             <h3 class="fontsforweb_fontid_9785" id="txtA">Why does a computer system need Output devices?</h3>
             <p class="lead" id="txtB">An output device is any device used to send data from a computer to another device or user. 
                 Most computer data output that is meant for humans is in the form of audio or video. 
@@ -57,7 +58,7 @@
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
                             <video id="cartoonVideo" controls>
-                                <source src="TCSHS_ICTVID.mp4" type="video/mp4">
+                                <source src="" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -70,12 +71,10 @@
             <div class="card-deck">
             </div>
         </div>
-
         <script>
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";
             }
-
             function closeNav() {
                 document.getElementById("mySidenav").style.width = "0";
             }

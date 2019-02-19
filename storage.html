@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="fonts/font.css">
     <link rel="stylesheet" href="css/lesson.css">
     <link rel="stylesheet" href="css/hover.min.css">
+    <link rel="stylesheet" href="./alima/sweetalert2.min.css">
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="./bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="./js/outputLessonItems.js"></script>
     <script src="./js/cardItems.js"></script>
-    <script src="./js/storageLessonItems.js"></script>
     <script src="./js/userSession.js"></script>
+    <script src="./alima/sweetalert2.all.min.js"></script>
 
 </head>
 
@@ -23,9 +25,9 @@
     <!--NAVIGATION-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="input.html">Input Devices</a>
-        <a href="output.html">Output Devices</a>
-        <a href="storage.html">Storage Device</a>
+        <a href="input.html " onclick="location.href=this.href+'?key1=0';return false;">Input Devices</a>
+        <a href="output.html" onclick="location.href=this.href+'?key1=1';return false;">Output Devices</a>
+        <a href="storage.html" onclick="location.href=this.href+'?key1=2';return false;">Storage Device</a>
         __________________________________
         <br>
         <a href="main.html">Main Menu</a>
@@ -39,9 +41,8 @@
             <p class="lead" id="txtB">A storage device is any computing hardware that is used for storing, porting and extracting data files and objects.
                 It can hold and store information both temporarily and permanently, and can be internal or external to a
                 computer, server or any similar computing device.
-            </p>
-            <button type="button" class="btn btn-dark btn-lg btn-block hvr-buzz-out" id="btn-vid" data-toggle="modal" data-backdrop="static"
-                data-target=".bd-example-modal-lg">Show Video</button>
+                </p>
+            <button type="button" class="btn btn-dark btn-lg btn-block hvr-buzz-out" id="btn-vid" data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg">Show Video</button>
         </div>
         <!--Video-->
         <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
@@ -57,24 +58,23 @@
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
                             <video id="cartoonVideo" controls>
-                                <source src="TCSHS_ICTVID.mp4" type="video/mp4">
+                                <source src="" type="video/mp4">
                             </video>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!--TOPICS-->
         <div class="container-fluid">
             <div class="card-deck">
             </div>
         </div>
-
         <script>
             function openNav() {
                 document.getElementById("mySidenav").style.width = "250px";
             }
-
             function closeNav() {
                 document.getElementById("mySidenav").style.width = "0";
             }
