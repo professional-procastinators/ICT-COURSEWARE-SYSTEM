@@ -38,6 +38,7 @@ function loadCards(lessonItems) {
                            <span class="sr-only">Next</span>
                            </a>
                         </div>
+                        <br>
                         <p class="lead">${lessonItems[i].full_description}</p>
                     </div>
                     <div class="modal-footer">

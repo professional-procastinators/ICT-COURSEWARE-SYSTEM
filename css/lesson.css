@@ -1,9 +1,11 @@
+
 body{
     display: grid;
     position: relative;
+    background-color: #c7ecee;
 }
 .jumbotron{
-    background-color: rgb(211, 211, 255);
+    background-color: #f6e58d;
 }
 
 #btn-vid{
@@ -44,6 +46,7 @@ button.close {
 .card-body{
   height: 150px;
   width: 100%;
+  background-color: #3dc1d3;
 }
 
 .card-img-top{
@@ -75,6 +78,7 @@ p{
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    
   }
   
   /* The navigation menu links */
@@ -85,6 +89,7 @@ p{
     color: #818181;
     display: block;
     transition: 0.3s;
+    
   }
   
   /* When you mouse over the navigation links, change their color */

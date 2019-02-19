@@ -26,6 +26,13 @@
 </head>
 
 <body>
+    <!--NAVIGATION-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="main.html">Main Menu</a>
+        <a href="index.html">Home</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; LESSONS</span>
     <div id="quizContainer" class="container">
         <div class="title">ICT Quiz</div>
         <div id="question" class="question"></div>
@@ -68,8 +75,14 @@
     </script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="jquery.js"></script>
+    <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
 </body>
-<script>
-</script>
 
 </html>

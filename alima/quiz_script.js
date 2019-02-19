@@ -26,6 +26,7 @@ function loadQuestion(qIndex, questionsArray) {
 function loadNextQuestion(questionsArray) {
     var selectedOption = document.querySelector('input[type = radio]:checked');
     if (!selectedOption) swal({
+        type: 'error',
         title: 'Please select your answer!',
     });
 
@@ -66,7 +67,7 @@ function loadNextQuestion(questionsArray) {
             else {
                 Swal.fire({
                     title: 'Failed',
-                    text: `Congratulations, you fucked up your quiz exam, here's your score dipshit: ${score}`,
+                    text: `You failed your quiz exam, here's your score: ${score}`,
                     type: 'confirm'
                 }).then(() => {
                     localStorage.setItem("isTakingQuiz", false);

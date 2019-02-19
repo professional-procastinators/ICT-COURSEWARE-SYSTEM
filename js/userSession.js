@@ -27,7 +27,7 @@ class Lesson{
                     lesson.lessonsMap.set('haveFinishedAll',true);
                     Swal.fire({
                         title: `Unlocked!`,
-                        text: `Congratulations! You've completed the Input Device Lesson! You've unloced the quiz for Input Devices.`,
+                        text: `Congratulations! You've completed the Input Device Lesson! You've unlocked the quiz for Input Devices.`,
                         type: 'info'
                     });
                 }
@@ -77,7 +77,7 @@ if(key1==="0"){
 }
 if(key1==="1"){
     let outputLessonNames = [];
-    outputLessonItems.forEach((item)=>{storageLessonName.push(item.name);console.log(item.name);});
+    outputLessonItems.forEach((item)=>{outputLessonName.push(item.name);console.log(item.name);});
     outputLesson = new Lesson(outputLessonNames,"outputLessonsMap");
     if(localStorage.getItem("outputLessonsMap")!==null){
         console.log("you just went here")

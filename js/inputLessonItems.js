@@ -39,8 +39,8 @@ var inputLessonItems = [{
     imageSource: "img/scanner.jpg",
     full_description: "full description of scanner",
     images: [{image:"img/input/Scanner/1.jpg",name:"Flatbed",caption:"A flatbed scanner is made up of a glass pane and a moving optical CIS or CCD array. The pane is illuminated with the help of bright light planted underneath it."},
-    {image:"img/input/Scanner/2.jpg",name:"Handheld",caption:"the document is fed into the horizontal or vertical slot provided in it. The prominent components of a sheetfed scanner include the sheet-feeder, scanning module, and calibration sheet."},
-    {image:"img/input/Scanner/3.jpg",name:"Sheetfed",caption:"A handheld scanner is a small manual scanning device which is moved over the object that needs to be scanned."}]
+    {image:"img/input/Scanner/2.jpg",name:"Handheld",caption:"A handheld scanner is a small manual scanning device which is moved over the object that needs to be scanned.the document is fed into the horizontal or vertical slot provided in it."},
+    {image:"img/input/Scanner/3.jpg",name:"Sheetfed",caption:"The prominent components of a sheetfed scanner include the sheet-feeder, scanning module, and calibration sheet"}]
 
 },
 {
