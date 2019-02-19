@@ -42,7 +42,7 @@ function loadNextQuestion(questionsArray) {
     if (questionNumber == 11) {
         if (score < 8) {
             if (localStorage.getItem("hasAlreadyTakenRetake") === null) {
-                localStorage.setItem("hasAlreadyTakenRetake","true");
+                localStorage.setItem("hasAlreadyTakenRetake", "true");
                 Swal.fire({
                     title: 'Retake Test?',
                     text: "Failed! Your score is" + score + "\nWould you like to try again?",
@@ -69,7 +69,12 @@ function loadNextQuestion(questionsArray) {
                     text: `Congratulations, you fucked up your quiz exam, here's your score dipshit: ${score}`,
                     type: 'confirm'
                 }).then(() => {
-                    localStorage.clear();
+                    localStorage.setItem("isTakingQuiz", false);
+                    switch (getUrlParameter('quiz')) {
+                        case "inputQuiz": localStorage.setItem("completedInputQuiz", true); break;
+                        case "outputQuiz": localStorage.setItem("completedoutputQuiz", true); break;
+                        case "storageQuiz": localStorage.setItem("completedstorageQuiz", true); break;
+                    }
                     window.location.href = "../main.html";
                 })
             }
@@ -80,7 +85,15 @@ function loadNextQuestion(questionsArray) {
                 text: 'Congratulations, you passed the Quiz! your score is ' + score,
                 type: 'confirm'
             }).then(() => {
-                localStorage.clear();
+                localStorage.setItem("questionIndex", 0);
+                localStorage.setItem("questionNumber", 1);
+                localStorage.setItem("score", 0);
+                localStorage.setItem("isTakingQuiz", false);
+                switch (getUrlParameter('quiz')) {
+                    case "inputQuiz": localStorage.setItem("completedInputQuiz", true); break;
+                    case "outputQuiz": localStorage.setItem("completedoutputQuiz", true); break;
+                    case "storageQuiz": localStorage.setItem("completedstorageQuiz", true); break;
+                }
                 window.location.href = "../main.html";
             });
         }
@@ -89,6 +102,7 @@ function loadNextQuestion(questionsArray) {
     localStorage.setItem("questionIndex", questionIndex.toString());
     localStorage.setItem("questionNumber", questionNumber.toString());
     localStorage.setItem("score", score.toString());
+    localStorage.setItem("shuffledQuestions", null);
     loadQuestion(questionIndex, questionsArray)
 }
 function shuffle(questions) {

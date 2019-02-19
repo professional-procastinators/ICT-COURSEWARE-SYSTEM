@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/hover.min.css">
     <link rel="stylesheet" href="./alima/sweetalert2.min.css">
     <script src="./alima/sweetalert2.all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -21,45 +21,48 @@
         <!--MAIN MENU-->
         <!--LESSON-->
         <div class="row">
-            <a><img src="img/folder.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right" id="img-lessons"></a>
+            <a><img src="img/folder.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right"
+                    id="img-lessons"></a>
             <h1 class="display-4 animated fadeIn slow" id="txt-lessons">Lessons</h1>
 
-            <a data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg"><img src="img/vid.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right"
-                    id="img-vid"></a>
+            <a data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg"><img src="img/vid.png"
+                    class="rounded float-left animated tada hvr-wobble-to-bottom-right" id="img-vid"></a>
             <h1 class="display-4 animated fadeIn slow" id="txt-vid">Instructional Video</h1>
             <!--MODAL-->
-            <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="false">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button " class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="false">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <video id="cartoonVideo" controls>
-                            <source src="TCSHS_ICTVID.mp4" type="video/mp4">
-                            </video>
+            <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="false">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button " class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="false">&times;</span>
+                            </button>
                         </div>
-                    </div>
+                        <div class="modal-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <video id="cartoonVideo" controls>
+                                    <source src="TCSHS_ICTVID.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <img src="img/quiz.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right" id="img-quiz"></a>
+            <img src="img/quiz.png" class="rounded float-left animated tada hvr-wobble-to-bottom-right"
+                id="img-quiz"></a>
             <h1 class="display-4 animated fadeIn slow" id="txt-quiz">Quizzes</h1>
         </div>
         <div class="lesson" style="display: none">
             <a href="input.html"><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="in-menu"></a>
             <h1 class="display-4 animated zoomIn" id="txt-int">Input Devices</h1>
 
-            <a  href="output.html"><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="ot-menu"></a>
+            <a href="output.html"><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="ot-menu"></a>
             <h1 class="display-4 animated zoomIn" id="txt-out">Output Devices</h1>
 
-            <a  href="storage.html"><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="st-menu"></a>
+            <a href="storage.html"><img src="img/lesson.png" class="rounded float-left hvr-grow-shadow"
+                    id="st-menu"></a>
             <h1 class="display-4 animated zoomIn" id="txt-str">Storage Devices</h1>
 
             <a href="main.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
@@ -68,6 +71,7 @@
             <a><button type="button" class="btn btn-secondary" id="quiz-back">Back</button></a>
             <img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="inputQuiz" value="inputQuiz">
             <h1 class="display-4 animated zoomIn" id="txt-int">Input Devices</h1>
+
 
             <img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="outputQuiz" value="outputQuiz">
             <h1 class="display-4 animated zoomIn" id="txt-out">Output Devices</h1>
@@ -83,21 +87,60 @@
                         $("#selectedQuiz").attr("value", e.target.id);
 
                         //gets the localstorage map and checks if the student have looked into all lessons
-                        let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonsMap"));
-                        let inputLessonsMap = new Map(inputLessonsArray.map(i=>[i[0],i[1]]));
-                        if(inputLessonsMap.get('haveFinishedAll')===true)
-                        $("#form").submit();
-                    });
-                    $(".row").find('img').click((e) => {
-                        console.log("you clicked on lessons folder");
-                        if(JSON.parse(localStorage.getItem("isTakingQuiz"))===true){
+                        if (localStorage.getItem("inputLessonsMap")) {
+                            let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonsMap"));
+                            var inputLessonsMap = new Map(inputLessonsArray.map(i => [i[0], i[1]]));
+                        }
+                        if (localStorage.getItem("outputLessonsMap")) {
+                            let outputLessonsArray = JSON.parse(localStorage.getItem("outputLessonsMap"));
+                            var outputLessonsMap = new Map(outputLessonsArray.map(i => [i[0], i[1]]));
+                        }
+                        if (localStorage.getItem("storageLessonsMap")) {
+                            let storageLessonsArray = JSON.parse(localStorage.getItem("storageLessonsMap"));
+                            var storageLessonsMap = new Map(storageLessonsArray.map(i => [i[0], i[1]]));
+                        }
+                        if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
+                            $("#form").submit();
+                        }
+                        else {
                             Swal.fire({
-                    title: `You can't do that.`,
-                    text: `You're currently taking a quiz, you can't access the lessons yet.`,
-                    type: 'confirm'
-                }).then(() => {
-                    window.location.href = "main.html";
-                })
+                                title: `You can't do that.`,
+                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                type: 'info'
+                            })
+                        }
+                        if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
+                            $("#form").submit();
+                        }
+                        else {
+                            Swal.fire({
+                                title: `You can't do that.`,
+                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                type: 'info'
+                            })
+                        }
+                        if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
+                            $("#form").submit();
+                        }
+                        else {
+                            Swal.fire({
+                                title: `You can't do that.`,
+                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                type: 'info'
+                            })
+                        }
+
+                    });
+                    $(".row").find('img#img-lessons').click((e) => {
+                        console.log("you clicked on lessons folder");
+                        if (JSON.parse(localStorage.getItem("isTakingQuiz")) === true) {
+                            Swal.fire({
+                                title: `You can't do that.`,
+                                text: `You're currently taking a quiz, you can't access the lessons yet.`,
+                                type: 'info'
+                            }).then(() => {
+                                window.location.href = "main.html";
+                            })
                         }
                     });
                     // $("#quizbutton").click((e)=>{
@@ -126,7 +169,6 @@
         });
         $(".quiz").hide();
         $("#img-quiz").click(function () {
-
             $(".quiz").slideDown();
             $(".row").hide();
         });

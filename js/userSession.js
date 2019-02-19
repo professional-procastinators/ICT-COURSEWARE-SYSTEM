@@ -39,6 +39,11 @@ class Lesson{
                     //lesson quiz is accessible once all the lessons have been watched
                      if(!Array.from(lesson.lessonsMap.values()).includes(false)){
                          lesson.lessonsMap.set('haveFinishedAll',true);
+                         Swal.fire({
+                            title: `Unlocked!`,
+                            text: `Congratulations! You've completed the Input Device Lesson! You've unloced the quiz for Input Devices.`,
+                            type: 'info'
+                        });
                      }
                      //local storage will be set everytime a lesson button is clicked
                      localStorage.setItem(`${lesson.lessonName}`,JSON.stringify(Array.from(lesson.lessonsMap.entries())));
@@ -51,19 +56,19 @@ class Lesson{
 }
 
 //set up inputLessonMapSession
-if(localStorage.getItem("inputLessonsMap")===null){
+if(localStorage.getItem("inputLessonsMap")===null || inputLessonItems===null || undefined){
     let inputLessonNames = [];
     inputLessonItems.forEach((item)=>{inputLessonNames.push(item.name);console.log(item.name);});
     inputLesson = new Lesson(inputLessonNames,"inputLessonsMap");
 }
-if(localStorage.getItem("outputLessonsMap")===null){
-    let inputLessonNames = [];
-    inputLessonItems.forEach((item)=>{inputLessonNames.push(item.name);console.log(item.name);});
-    inputLesson = new Lesson(inputLessonNames,"outputLessonsMap");
+if(localStorage.getItem("outputLessonsMap")===null && inputLessonItems===null || undefined){
+    let outputLessonNames = [];
+    outputLessonItems.forEach((item)=>{storageLessonName.push(item.name);console.log(item.name);});
+    outputLesson = new Lesson(outputLessonNames,"outputLessonsMap");
 }
-if(localStorage.getItem("storageLessonsMap")===null){
-    let inputLessonNames = [];
-    inputLessonItems.forEach((item)=>{inputLessonNames.push(item.name);console.log(item.name);});
-    inputLesson = new Lesson(inputLessonNames,"storageLessonsMap");
+if(localStorage.getItem("storageLessonsMap")===null && inputLessonItems===null || undefined){
+    let storageLessonName = [];
+    storageLessonItems.forEach((item)=>{storageLessonName.push(item.name);console.log(item.name);});
+    storageLesson = new Lesson(storageLessonName,"storageLessonsMap");
 }
 

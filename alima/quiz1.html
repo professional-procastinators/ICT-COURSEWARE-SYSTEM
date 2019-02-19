@@ -44,7 +44,7 @@
             localStorage.setItem("isTakingQuiz","true");
             console.log("istaking quiz has been set up");
         $(document).ready(() => {
-            if(localStorage.getItem("shuffledQuestions")!==null){
+            if(JSON.parse(localStorage.getItem("shuffledQuestions"))!==null){
                 console.log(`questionIndex: ${localStorage.getItem("questionIndex")}`);
                 console.log(`questionNumber: ${localStorage.getItem("questionNumber")}`);
                 console.log(`score: ${localStorage.getItem("score")}`);
