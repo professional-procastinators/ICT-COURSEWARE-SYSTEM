@@ -78,6 +78,7 @@ function loadNextQuestion(questionsArray) {
                 localStorage.removeItem("questionIndex");
                 localStorage.removeItem("questionNumber");
                 localStorage.removeItem("score");
+                localStorage.removeItem("currentQuiz");
             }
         }
         else {
@@ -95,6 +96,7 @@ function loadNextQuestion(questionsArray) {
                     case "outputQuiz": localStorage.setItem("completedOutputQuiz", true); break;
                     case "storageQuiz": localStorage.setItem("completedStorageQuiz", true); break;
                 }
+                localStorage.removeItem("currentQuiz");
                 window.location.href = "../main.html";
             });
         }

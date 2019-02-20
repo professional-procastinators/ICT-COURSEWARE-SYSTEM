@@ -15,7 +15,6 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <section id="particles-js">
         <!--MAIN MENU-->
@@ -106,7 +105,7 @@
                             let storageLessonsArray = JSON.parse(localStorage.getItem("storageLessonsMap"));
                             storageLessonsMap = new Map(storageLessonsArray.map(i => [i[0], i[1]]));
                         }
-                        if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="inputQuiz"&&e.target.id === "inputQuiz") {
+                        if ((localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="inputQuiz")&&e.target.id === "inputQuiz") {
                             if (typeof inputLessonsMap !== 'undefined' && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
                                 $("#form").submit();
                             }
@@ -124,7 +123,7 @@
                                 })
                             }
                         }
-                        else if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="outputQuiz"&&e.target.id === "outputQuiz") {
+                        else if ((localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="outputQuiz")&&e.target.id === "outputQuiz") {
                             if (typeof outputLessonsMap !== 'undefined' && outputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedOutputQuiz")) === true) {
                                 $("#form").submit();
                             }
@@ -142,7 +141,7 @@
                                 })
                             }
                         }
-                        else if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="storageQuiz"&&e.target.id === "storageQuiz") {
+                        else if ((localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="storageQuiz")&&e.target.id === "storageQuiz") {
                             if (typeof storageLessonsMap !== 'undefined' && storageLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedStorageQuiz")) === true) {
                                 $("#form").submit();
 
