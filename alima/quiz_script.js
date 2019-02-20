@@ -47,7 +47,7 @@ function loadNextQuestion(questionsArray) {
                 Swal.fire({
                     title: 'Retake Test?',
                     text: "Failed! Your score is" + score + "\nYou need to retake the test.",
-                    type: 'confirm',
+                    type: 'warning',
                     confirmButtonText: `Yes, I'll retake the test`
                 }).then((result) => {
                     if (result.value) {
@@ -77,6 +77,9 @@ function loadNextQuestion(questionsArray) {
                     }
                     window.location.href = "../main.html";
                 })
+                localStorage.removeItem("questionIndex");
+                localStorage.removeItem("questionNumber");
+                localStorage.removeItem("score");
             }
         }
         else {

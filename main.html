@@ -87,27 +87,40 @@
                 $(document).ready(() => {
                     $(".quiz").find('img').click((e) => {
                         $("#selectedQuiz").attr("value", e.target.id);
-
+                        let inputLessonsMap;
+                        let outputLessonsMap;
+                        let storageLessonsMap;
                         //gets the localstorage map and checks if the student have looked into all lessons
                         if (localStorage.getItem("inputLessonsMap")) {
+                            console.log("new input Map created");
                             let inputLessonsArray = JSON.parse(localStorage.getItem("inputLessonsMap"));
-                            var inputLessonsMap = new Map(inputLessonsArray.map(i => [i[0], i[1]]));
+                             inputLessonsMap = new Map(inputLessonsArray.map(i => [i[0], i[1]]));
                         }
                         if (localStorage.getItem("outputLessonsMap")) {
+                            console.log("new outputLesson Map created");
                             let outputLessonsArray = JSON.parse(localStorage.getItem("outputLessonsMap"));
-                            var outputLessonsMap = new Map(outputLessonsArray.map(i => [i[0], i[1]]));
+                             outputLessonsMap = new Map(outputLessonsArray.map(i => [i[0], i[1]]));
                         }
                         if (localStorage.getItem("storageLessonsMap")) {
+                            console.log("new storage Map created");
                             let storageLessonsArray = JSON.parse(localStorage.getItem("storageLessonsMap"));
-                            var storageLessonsMap = new Map(storageLessonsArray.map(i => [i[0], i[1]]));
+                             storageLessonsMap = new Map(storageLessonsArray.map(i => [i[0], i[1]]));
                         }
                         if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
                             $("#form").submit();
                         }
                         else {
+                            let text = "";
+                            if(JSON.parse(localStorage.getItem("completedInputQuiz")))
+                            text = `You've already taken this quiz.`;
+                            else if(!inputLessonsMap.get("haveFinishedAll"))
+                            text = `You haven't completed the Output Device Lesson yet.`;
+                            else
+                            text = `You haven't completed the lesson or you've already taken this quiz.`;
+
                             Swal.fire({
                                 title: `You can't do that.`,
-                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                text: text,
                                 type: 'info'
                             })
                         }
@@ -115,9 +128,17 @@
                             $("#form").submit();
                         }
                         else {
+                            let text = "";
+                            if(JSON.parse(localStorage.getItem("completedOutputQuiz")))
+                            text = `You've already taken this quiz.`;
+                            else if(!outputLessonsMap.get('haveFinishedAll'))
+                            text = `You haven't completed the Output Device Lesson yet.`;
+                            else
+                            text = `You haven't completed the lesson or you've already taken this quiz.`;
+
                             Swal.fire({
                                 title: `You can't do that.`,
-                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                text: text,
                                 type: 'info'
                             })
                         }
@@ -125,9 +146,17 @@
                             $("#form").submit();
                         }
                         else {
+                            let text = "";
+                            if(JSON.parse(localStorage.getItem("completedStorageQuiz")))
+                            text = `You've already taken this quiz.`;
+                            else if(!storageLessonsMap.get('haveFinishedAll'))
+                            text = `You haven't completed the Storage Device Lesson yet.`;
+                            else
+                            text = `You haven't completed the lesson or you've already taken this quiz.`;
+
                             Swal.fire({
                                 title: `You can't do that.`,
-                                text: `You haven't completed the lesson or you've already taken this quiz.`,
+                                text: text,
                                 type: 'info'
                             })
                         }
