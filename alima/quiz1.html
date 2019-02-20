@@ -47,11 +47,12 @@
     <script src="quiz_script.js"></script>
     <script>
         var shuffledQuestions;
-        if(localStorage.getItem("isTakingQuiz")===null)
-            localStorage.setItem("isTakingQuiz","true");
-            console.log("istaking quiz has been set up");
+        if (localStorage.getItem("isTakingQuiz") === null)
+            localStorage.setItem("isTakingQuiz", "true");
+        localStorage.setItem("currentQuiz", getUrlParameter('quiz'));
+        console.log("istaking quiz has been set up");
         $(document).ready(() => {
-            if(JSON.parse(localStorage.getItem("shuffledQuestions"))!==null){
+            if (JSON.parse(localStorage.getItem("shuffledQuestions")) !== null) {
                 console.log(`questionIndex: ${localStorage.getItem("questionIndex")}`);
                 console.log(`questionNumber: ${localStorage.getItem("questionNumber")}`);
                 console.log(`score: ${localStorage.getItem("score")}`);
@@ -59,30 +60,30 @@
                 console.log(`shuffledQuestions: ${shuffledQuestions}`);
                 loadQuestion(questionIndex, shuffledQuestions); $("#nextButton").attr("onclick", "loadNextQuestion(shuffledQuestions)");
             }
-            else{
+            else {
                 console.log("reshuffled questions");
                 switch (getUrlParameter('quiz')) {
-                case "inputQuiz":  shuffledQuestions = shuffle(inputQuestions); break;
-                case "outputQuiz":  shuffledQuestions = shuffle(outputQuestions); break;
-                case "storageQuiz":  shuffledQuestions = shuffle(storageQuestions); break;
-            };
-            console.log("shuffledQuestiosn"+shuffledQuestions);
-            localStorage.setItem("shuffledQuestions",JSON.stringify(shuffledQuestions));
-            loadQuestion(0, shuffledQuestions); $("#nextButton").attr("onclick", "loadNextQuestion(shuffledQuestions)");
+                    case "inputQuiz": shuffledQuestions = shuffle(inputQuestions); break;
+                    case "outputQuiz": shuffledQuestions = shuffle(outputQuestions); break;
+                    case "storageQuiz": shuffledQuestions = shuffle(storageQuestions); break;
+                };
+                console.log("shuffledQuestiosn" + shuffledQuestions);
+                localStorage.setItem("shuffledQuestions", JSON.stringify(shuffledQuestions));
+                loadQuestion(0, shuffledQuestions); $("#nextButton").attr("onclick", "loadNextQuestion(shuffledQuestions)");
             }
-            
+
         });
     </script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="jquery.js"></script>
     <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 
 </html>

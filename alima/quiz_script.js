@@ -70,8 +70,8 @@ function loadNextQuestion(questionsArray) {
                     localStorage.setItem("isTakingQuiz", false);
                     switch (getUrlParameter('quiz')) {
                         case "inputQuiz": localStorage.setItem("completedInputQuiz", true); break;
-                        case "outputQuiz": localStorage.setItem("completedoutputQuiz", true); break;
-                        case "storageQuiz": localStorage.setItem("completedstorageQuiz", true); break;
+                        case "outputQuiz": localStorage.setItem("completedOutputQuiz", true); break;
+                        case "storageQuiz": localStorage.setItem("completedStorageQuiz", true); break;
                     }
                     window.location.href = "../main.html";
                 })
@@ -92,8 +92,8 @@ function loadNextQuestion(questionsArray) {
                 localStorage.setItem("isTakingQuiz", false);
                 switch (getUrlParameter('quiz')) {
                     case "inputQuiz": localStorage.setItem("completedInputQuiz", true); break;
-                    case "outputQuiz": localStorage.setItem("completedoutputQuiz", true); break;
-                    case "storageQuiz": localStorage.setItem("completedstorageQuiz", true); break;
+                    case "outputQuiz": localStorage.setItem("completedOutputQuiz", true); break;
+                    case "storageQuiz": localStorage.setItem("completedStorageQuiz", true); break;
                 }
                 window.location.href = "../main.html";
             });

@@ -106,7 +106,7 @@
                             let storageLessonsArray = JSON.parse(localStorage.getItem("storageLessonsMap"));
                             storageLessonsMap = new Map(storageLessonsArray.map(i => [i[0], i[1]]));
                         }
-                        if (e.target.id === "inputQuiz") {
+                        if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="inputQuiz"&&e.target.id === "inputQuiz") {
                             if (typeof inputLessonsMap !== 'undefined' && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
                                 $("#form").submit();
                             }
@@ -124,7 +124,7 @@
                                 })
                             }
                         }
-                        else if (e.target.id === "outputQuiz") {
+                        else if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="outputQuiz"&&e.target.id === "outputQuiz") {
                             if (typeof outputLessonsMap !== 'undefined' && outputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedOutputQuiz")) === true) {
                                 $("#form").submit();
                             }
@@ -142,8 +142,8 @@
                                 })
                             }
                         }
-                        else if (e.target.id === "storageQuiz") {
-                            if (typeof outputLessonsMap !== 'undefined' && storageLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedStorageQuiz")) === true) {
+                        else if (localStorage.getItem("currentQuiz")===null|| localStorage.getItem("currentQuiz")==="storageQuiz"&&e.target.id === "storageQuiz") {
+                            if (typeof storageLessonsMap !== 'undefined' && storageLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedStorageQuiz")) === true) {
                                 $("#form").submit();
 
                             }
@@ -161,7 +161,13 @@
                                 })
                             }
                         }
-
+                        else{
+                            Swal.fire({
+                                    title: `You can't do that.`,
+                                    text: `You're currently taking a quiz from other lesson.`,
+                                    type: 'info'
+                                })
+                        }
                     });
                     // $("#quizbutton").click((e)=>{
                     //     $("#selectedQuiz").attr("value",$(this).attr("value"));
