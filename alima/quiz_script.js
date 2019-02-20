@@ -46,7 +46,7 @@ function loadNextQuestion(questionsArray) {
                 localStorage.setItem("hasAlreadyTakenRetake", "true");
                 Swal.fire({
                     title: 'Retake Test',
-                    text: "Failed! Your score is" + score + "\nYou need to retake the test.",
+                    text: "Failed! Your score is " + score + "\n\nYou need to retake the test.",
                     type: 'warning',
                     confirmButtonText: `Yes, I'll retake the test`
                 }).then(() => {
