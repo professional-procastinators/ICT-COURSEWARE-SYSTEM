@@ -325,12 +325,12 @@
 			"answer": "1"
 		},
 		{
-			"question": "Output QUESTION 10",
-			"option1": "Storage Device",
-			"option2": "Processing Device",
-			"option3": "Output Device",
-			"option4": "Input  Device",
-			"answer": "4"
+			"question": "Which of the following is not a type of Output Device?",
+			"option1": "Analog Camera",
+			"option2": "On-Ear Headphones",
+			"option3": "Laser Jet Printer",
+			"option4": "Speakers",
+			"answer": "1"
 		},
 		{
 			"question": "New technology named 'LED' is abbreviation of:",
