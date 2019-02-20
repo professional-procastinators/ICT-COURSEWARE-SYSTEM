@@ -49,8 +49,7 @@ function loadNextQuestion(questionsArray) {
                     text: "Failed! Your score is" + score + "\nYou need to retake the test.",
                     type: 'warning',
                     confirmButtonText: `Yes, I'll retake the test`
-                }).then((result) => {
-                    if (result.value) {
+                }).then(() => {
                         currentQuestion = 0;
                         questionsDone = [];
                         doneCounter = 0;
@@ -60,7 +59,6 @@ function loadNextQuestion(questionsArray) {
                         localStorage.setItem("questionNumber", 1);
                         localStorage.setItem("score", 0);
                         loadQuestion(questionIndex, questionsArray);
-                    }
                 })
             }
             else {
