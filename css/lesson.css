@@ -33,7 +33,15 @@ button.close {
     text-align: justify;
     font-size: 1.50rem;
 }
-
+/*MODAL CONTENT*/
+h2{
+    text-indent: 40px;
+    text-align: justify;
+    font-size: 30px;
+    border: 1px solid gray;
+    padding: 10px;
+    letter-spacing: 3px;
+}
 .card{
     margin-bottom: 10%;
     margin-top: 10%;
@@ -64,6 +72,7 @@ button.close {
 p{
     text-indent: 40px;
     text-align: justify;
+    font-size: 35px;
 }
 
 /* The side navigation menu */

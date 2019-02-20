@@ -46,11 +46,8 @@ function loadNextQuestion(questionsArray) {
                 localStorage.setItem("hasAlreadyTakenRetake", "true");
                 Swal.fire({
                     title: 'Retake Test?',
-                    text: "Failed! Your score is" + score + "\nWould you like to try again?",
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
+                    text: "Failed! Your score is" + score + "\nYou need to retake the test.",
+                    type: 'confirm',
                     confirmButtonText: `Yes, I'll retake the test`
                 }).then((result) => {
                     if (result.value) {
@@ -60,6 +57,8 @@ function loadNextQuestion(questionsArray) {
                         questionNumber = 1;
                         score = 0;
                         nextButton.textContent = 'Next';
+                        localStorage.setItem("questionNumber", 1);
+                        localStorage.setItem("score", 0);
                         loadQuestion(questionIndex, questionsArray);
                     }
                 })

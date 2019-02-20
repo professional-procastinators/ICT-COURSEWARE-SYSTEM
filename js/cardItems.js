@@ -39,7 +39,11 @@ function loadCards(lessonItems) {
                            </a>
                         </div>
                         <br>
-                        <p class="lead">${lessonItems[i].full_description}</p>
+                        <h2 class="fontsforweb_fontid_9785">${lessonItems[i].full_description.firstp}</h2>
+                        <br>
+                        <p class="lead">${lessonItems[i].full_description.secondp}</p>
+                        <br>
+                        <p class="lead">${lessonItems[i].full_description.thirdp}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
