@@ -4,8 +4,8 @@ var storageLessonItems = [{
     imageSource: "img/hdd.jpg",
     full_description: "A computer keyboard is one of the primary input devices used with a computer. Similar to an electric typewriter, a keyboard is composed of buttons that create letters, numbers, and symbols, as well as perform other functions. A keyboard uses labeled buttons as input switches. The standard QWERTY keyboard is the commonest way to enter text and numerical data into a computer",
     images: [{image: "img/storage/disk/1.jpg",name:"Solid-State Drive",caption: "An SSD is a storage medium that uses non-volatile memory as a means of holding and accessing data."},
-    {image:"img/storage/disk/2.jpg",name:"Hard Drive",caption: "caption number fucking 2"},
-    {image: "img/storage/disk/3.jpg",name:"Hard Drive",caption: "caption number fucking 3"},]
+    {image:"img/storage/disk/2.jpg",name:"Hard Drive",caption: ""},
+    {image: "img/storage/disk/3.jpg",name:"Hard Drive",caption: ""},]
 },
 
 {
