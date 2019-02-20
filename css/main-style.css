@@ -26,6 +26,13 @@
         min-width: 100%; 
         min-height: 100%;
     }
+
+    /*.swal-btn{
+        min-height: 70%;
+        padding: 0px;
+        margin: auto;
+
+    }*/
     
     /*MODAL*/
     .modal-body{
@@ -148,7 +155,7 @@
         left: 30%
     }
     
-    button{
+    .btn{
         position: absolute;
         bottom: 5%;
         left: 15%;

@@ -69,7 +69,7 @@
             <a href="main.html"><button type="button" class="btn btn-dark" id="ls-back">Back</button></a>
         </div>
         <div class="quiz">
-            <a><button type="button" class="btn btn-secondary" id="quiz-back">Back</button></a>
+            
             <img src="img/lesson.png" class="rounded float-left hvr-grow-shadow" id="inputQuiz" value="inputQuiz">
             <h1 class="display-4 animated zoomIn" id="txt-int">Input Devices</h1>
 
@@ -119,7 +119,9 @@
                                 Swal.fire({
                                     title: `You can't do that.`,
                                     text: text,
-                                    type: 'info'
+                                    type: 'error',
+                                    confirmButton: 'OK',
+                                    
                                 })
                             }
                         }
@@ -137,7 +139,9 @@
                                 Swal.fire({
                                     title: `You can't do that.`,
                                     text: text,
-                                    type: 'info'
+                                    type: 'error',
+                                    confirmButton: 'OK',
+                                    
                                 })
                             }
                         }
@@ -156,7 +160,9 @@
                                 Swal.fire({
                                     title: `You can't do that.`,
                                     text: text,
-                                    type: 'info'
+                                    type: 'error',
+                                    confirmButton: 'OK',
+                                    
                                 })
                             }
                         }
@@ -164,7 +170,9 @@
                             Swal.fire({
                                     title: `You can't do that.`,
                                     text: `You're currently taking a quiz from other lesson.`,
-                                    type: 'info'
+                                    type: 'error',
+                                    confirmButton: 'OK',
+                                    
                                 })
                         }
                     });
@@ -175,7 +183,7 @@
                     // });
                 });
             </script>
-            <a href="main.html"><button type="button" class="btn btn-outline-primary">Back</button></a>
+            <a href="main.html"><button type="button" class="btn btn-dark">Back</button></a>
         </div>
 
     </section>
@@ -213,7 +221,7 @@
                 Swal.fire({
                     title: `You can't do that.`,
                     text: `You're currently taking a quiz, you can't access the lessons yet.`,
-                    type: 'info'
+                    type: 'error'
                 }).then(() => {
                     window.location.href = "main.html";
                 })
