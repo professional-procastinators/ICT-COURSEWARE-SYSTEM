@@ -19,10 +19,17 @@ class Lesson {
     static setUpLessonsButtonEvents(lesson) {
         $(document).ready(() => {
             console.log("ready");
+            if (localStorage.getItem("isAlreadyNotified") === null || Array.from(lesson.lessonsMap.values()).includes(false)) {
+                localStorage.setItem("isAlreadyNotified", false);
+            }
+            else{
+                localStorage.setItem("isAlreadyNotified", true);
+            }
             $(`[id='btn-vid']`).click(() => {
                 console.log("clicked on watch vid");
                 lesson.lessonsMap.set('hasWatchedVid', true);
-                if (!Array.from(lesson.lessonsMap.values()).includes(false)) {
+                if (!Array.from(lesson.lessonsMap.values()).includes(false) && !JSON.parse(localStorage.getItem("isAlreadyNotified"))) {
+                    localStorage.setItem("isAlreadyNotified", true);
                     console.log("successfully finished lesson");
                     lesson.lessonsMap.set('haveFinishedAll', true);
                     Swal.fire({
@@ -43,7 +50,8 @@ class Lesson {
                     console.log(`${key} was set to true`);
                     lesson.lessonsMap.set(key, true);
                     //lesson quiz is accessible once all the lessons have been watched
-                    if (!Array.from(lesson.lessonsMap.values()).includes(false)) {
+                    if (!Array.from(lesson.lessonsMap.values()).includes(false) && !JSON.parse(localStorage.getItem("isAlreadyNotified"))) {
+                        localStorage.setItem("isAlreadyNotified", true);
                         console.log("successfully finished lesson");
                         lesson.lessonsMap.set('haveFinishedAll', true);
                         Swal.fire({
