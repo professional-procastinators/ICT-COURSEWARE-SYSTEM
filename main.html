@@ -109,7 +109,7 @@
                                 type: 'info'
                             })
                         }
-                        if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
+                        if (e.target.id === "outputQuiz" && outputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedOutputQuiz")) === true) {
                             $("#form").submit();
                         }
                         else {
@@ -119,7 +119,7 @@
                                 type: 'info'
                             })
                         }
-                        if (e.target.id === "inputQuiz" && inputLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedInputQuiz")) === true) {
+                        if (e.target.id === "storageQuiz" && storageLessonsMap.get('haveFinishedAll') === true && !JSON.parse(localStorage.getItem("completedStorageQuiz")) === true) {
                             $("#form").submit();
                         }
                         else {
