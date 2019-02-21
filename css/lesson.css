@@ -1,21 +1,46 @@
-
+html {
+ zoom: 110%;
+}
 body{
     display: grid;
     position: relative;
-    background-color: #c7ecee;
-}
-.jumbotron{
-    background-color: #f6e58d;
+    background: #fff;
 }
 
-#btn-vid{
-    margin-top: 70px;
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00b894; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  #LessonName, #txtA2, #txtB2 {
+	text-align: center;
 }
-
-#txtA{
-    text-indent: 30px;
+#txtA2 {
+	font-size: 16px;
+    letter-spacing: 5px;
 }
+#txtB2 {
+	font-size: 15px;
+    letter-spacing: 3px;
+    font-family: century gothic;
 
+}
+.header {
+	 background: url(../img/test.jpg);
+    background-size: cover;
+    padding-top: 15px;
+}
+.toprow {
+    background: url(../img/bg-header.png);
+    background-size: cover;
+}
 
 /*MODAL- VIDEO*/
 .modal-content {
@@ -32,6 +57,23 @@ button.close {
     text-indent: 40px;
     text-align: justify;
     font-size: 1.50rem;
+}
+.dyk_desc {
+	letter-spacing: 3px;
+	font-family: century gothic;
+}
+.video {
+	text-align: right;
+	color: #fff;
+	font-family: century gothic;
+}
+#vtitle {
+    letter-spacing: 10px;
+    font-size: 25px;
+}
+#vdesc {
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 /*MODAL CONTENT*/
 h2{
@@ -54,7 +96,7 @@ h2{
 .card-body{
   height: 150px;
   width: 100%;
-  background-color:#f1f1f1;
+  background: #eee;
 }
 .card-text{
     color:   #000000;
@@ -75,7 +117,7 @@ h2{
 p{
     text-indent: 40px;
     text-align: justify;
-    font-size: 35px;
+    font-size: 12px;
 }
 
 /* The side navigation menu */

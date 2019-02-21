@@ -1,6 +1,5 @@
 <!Doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>ICT Courseware</title>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" href="animate.css-master/animate.min.css">
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="fonts/font.css">
-    <link rel="stylesheet" href="css/lesson.css">
+    <link rel="stylesheet" href="css/storage.css">
     <link rel="stylesheet" href="css/hover.min.css">
     <link rel="stylesheet" href="./alima/sweetalert2.min.css">
     <script src="./jquery-3.3.1.min.js"></script>
@@ -22,63 +21,99 @@
 </head>
 
 <body>
-    <!--NAVIGATION-->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="input.html " onclick="location.href=this.href+'?key1=0';return false;">Input Devices</a>
-        <a href="output.html" onclick="location.href=this.href+'?key1=1';return false;">Output Devices</a>
-        <a href="storage.html" onclick="location.href=this.href+'?key1=2';return false;">Storage Device</a>
-        __________________________________
-        <br>
-        <a href="main.html">Main Menu</a>
-        <a href="index.html">Home</a>
-    </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; LESSONS</span>
     <div id="main">
-        <div class="jumbotron animated zoomIn delay 1s">
-            <h1 class="display-3 fontsforweb_fontid_9785" id="LessonName">Storage Devices</h1>
-            <h3 class="fontsforweb_fontid_9785" id="txtA">Why does a computer system need storage devices?</h3>
-            <p class="lead" id="txtB">A storage device is any computing hardware that is used for storing, porting and extracting data files and objects.
-                It can hold and store information both temporarily and permanently, and can be internal or external to a
-                computer, server or any similar computing device.
-                </p>
-            <button type="button" class="btn btn-dark btn-lg btn-block hvr-buzz-out" id="btn-vid" data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg">Show Video</button>
+    <div class="container-fluid pl-0 pr-0 bgheader">
+        <!--NAVIGATION-->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="input.html " onclick="location.href=this.href+'?key1=0';return false;">Input Devices</a>
+            <a href="output.html" onclick="location.href=this.href+'?key1=1';return false;">Output Devices</a>
+            <a href="storage.html" onclick="location.href=this.href+'?key1=2';return false;">Storage Device</a>
+            __________________________________
+            <br>
+            <a href="main.html">Main Menu</a>
+            <a href="index.html">Home</a>
         </div>
-        <!--Video-->
-        <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="false">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button " class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="false">&times;</span>
-                        </button>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; LESSONS</span>  
+    <div class="header">
+        <div class="row pt-5 pb-5 mr-0 toprow">
+            <div class="col"></div>
+            <div class="col-6">
+                <h1 class="display-4 fontsforweb_fontid_9785" id="LessonName">Storage devices</h1>
+                <h3 class="fontsforweb_fontid_9785 mt-4" id="txtA2">Why does a computer system need storage devices?
+                                        </h3>
+                <p class="mt-4 mb-5" id="txtB2">A storage device is any computing hardware that is used for storing, porting and extracting data files and objects.
+                        It can hold and store information both temporarily and permanently, and can be internal or external to a
+                        computer, server or any similar computing device.
+                </p>            
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row pt-5 pb-5 mr-0 ml-0">
+                <div class="col-5 mt-5">
+                    <div class="didyouknow mt-5">
+                       <div class="row d-flex justify-content-center">
+                           <img src="img/question.png" alt="" width="75" height="75">
+                       </div>
+                      
                     </div>
-                    <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <video id="cartoonVideo" controls>
-                                <source src="" type="video/mp4">
-                            </video>
-                        </div>
+                </div>
+
+            <div class="col-7 mt-5">
+                <div class="video mt-5">
+                      <div class="col-6 float-left mt-3">
+                        <h3 id="vtitle">Play the Video</h3>
+                        <h4 id="vdesc">Learn more about input devices</h4>
+                        <img src="img/vcamera.png" alt="" with="50" height="50">
+                        <img src="img/vmouse.png" alt="" with="50" height="50">
+                        <img src="img/vkeyboard.png" alt="" with="50" height="50">
+                        <img src="img/vmic.png" alt="" with="50" height="50">
+                    </div>
+                    <div class="col-6 float-left ">
+                         <input type="image" id="btn-vid" src="img/video-pic.png" class="img-fluid" id="btn-vid" data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg" />
+
+                        <!--Video-->
+                        <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                        aria-hidden="false">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button " class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="false">&times;</span>
+                                        </button>
+                                    </div>
+                                <div class="modal-body">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <video id="cartoonVideo" controls>
+                                        <source src="" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>                         
                     </div>
                 </div>
             </div>
+        </div>        
+    </div> <!-- div close header -->
+    </div> <!-- div close container fluid -->
+    </div>
+    <div class="container-fluid">
+        <div class="card-deck">
         </div>
-
-        <!--TOPICS-->
-        <div class="container-fluid">
-            <div class="card-deck">
-            </div>
-        </div>
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+    </div>
+    
+  
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 
 </html>

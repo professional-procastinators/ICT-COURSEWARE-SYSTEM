@@ -35,7 +35,8 @@ class Lesson {
                     Swal.fire({
                         title: `Unlocked!`,
                         text: `Congratulations! You've completed the ${document.getElementById("LessonName").textContent} Lesson! You've unlocked the quiz for ${document.getElementById("LessonName").textContent}.`,
-                        type: 'info'
+                        type: 'info',
+                        allowOutsideClick: false
                     });
                 }
                 //store the inputLessonMap to localStorage
@@ -57,7 +58,8 @@ class Lesson {
                         Swal.fire({
                             title: `Unlocked!`,
                             text: `Congratulations! You've completed the ${document.getElementById("LessonName").textContent} Lesson! You've unlocked the quiz for ${document.getElementById("LessonName").textContent}.`,
-                            type: 'info'
+                            type: 'info',
+                            allowOutsideClick: false
                         });
                     }
                     //local storage will be set everytime a lesson button is clicked
