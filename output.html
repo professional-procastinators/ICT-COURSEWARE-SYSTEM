@@ -72,7 +72,7 @@
                          <input type="image" id="btn-vid" src="img/video-pic.png" class="img-fluid" id="btn-vid" data-toggle="modal" data-backdrop="static" data-target=".bd-example-modal-lg" />
 
                         <!--Video-->
-                        <div class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                        <div id="myModal" class="modal animated bounceIn bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                         aria-hidden="false">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -103,7 +103,16 @@
         <div class="card-deck">
         </div>
     </div>
+    <script>
+            $('#myModal').on('hide.bs.modal', function(e) {    
+                var $if = $(e.delegateTarget).find('video');
+                var src = $if.attr("src");
+                $if.attr("src", 'SYSTEM MATERIALS/OUTPUT-LESSON.mp4');
+                $if.attr("src", src);   
+            });
     
+      
+        </script>   
   
     <script>
         function openNav() {
