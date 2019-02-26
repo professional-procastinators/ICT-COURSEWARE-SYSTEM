@@ -19,7 +19,7 @@ class Lesson {
     static setUpLessonsButtonEvents(lesson) {
         $(document).ready(() => {
             console.log("ready");
-            if (localStorage.getItem("isAlreadyNotified") === null || (Array.from(lesson.lessonsMap.values()).includes(false) && localStorage.getItem("isAlreadyNotified") !== null)|| Array.from(lesson.lessonsMap.values()).includes(false)) {
+            if (localStorage.getItem("isAlreadyNotified") === null || Array.from(lesson.lessonsMap.values()).includes(false)) {
                 localStorage.setItem("isAlreadyNotified", false);
             }
             else{
