@@ -1,93 +1,138 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Quiz</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../img/TCSHS-LOGO.png">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="../css/hover.min.css">
-    <link rel="stylesheet" href="../animate.css-master/animate.min.css">
-    <link href="quiz.css" rel="stylesheet">
-    <link rel="stylesheet" href="../fonts/font.css">
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../img/TCSHS-LOGO.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/hover.min.css" />
+    <link rel="stylesheet" href="../animate.css-master/animate.min.css" />
+    <link href="quiz.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../fonts/font.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
     <script src="jquery.js"></script>
     <script>
-        var getUrlParameter = function getUrlParameter(sParam) {
-            var sPageURL = window.location.search.substring(1),
-                sURLVariables = sPageURL.split('&'),
-                sParameterName,
-                i;
+      var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split("&"),
+          sParameterName,
+          i;
 
-            for (i = 0; i < sURLVariables.length; i++) {
-                sParameterName = sURLVariables[i].split('=');
+        for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split("=");
 
-                if (sParameterName[0] === sParam) {
-                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                }
-            }
-        };
+          if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined
+              ? true
+              : decodeURIComponent(sParameterName[1]);
+          }
+        }
+      };
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--NAVIGATION-->
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../main.html">Main Menu</a>
-        <a href="../index.html">Home</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="../main.html">Main Menu</a>
+      <a href="../index.html">Home</a>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; LESSONS</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"
+      >&#9776; LESSONS</span
+    >
     <div id="quizContainer" class="container animated zoomIn">
-        <div class="title fontsforweb_fontid_9785">ICT Quiz</div>
-        <div id="question" class="question fontsforweb_fontid_9785"></div>
-        <label class="option hvr-grow-shadow"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
-        <label class="option hvr-grow-shadow"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
-        <label class="option hvr-grow-shadow"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
-        <label class="option hvr-grow-shadow"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
-        <button id="nextButton" class="next-btn fontsforweb_fontid_9785 hvr-hollow" onclick="">Next Question</button>
+      <div class="title fontsforweb_fontid_9785">ICT Quiz</div>
+      <div id="question" class="question fontsforweb_fontid_9785"></div>
+      <label class="option hvr-grow-shadow"
+        ><input type="radio" name="option" value="1"/> <span id="opt1"></span
+      ></label>
+      <label class="option hvr-grow-shadow"
+        ><input type="radio" name="option" value="2"/> <span id="opt2"></span
+      ></label>
+      <label class="option hvr-grow-shadow"
+        ><input type="radio" name="option" value="3"/> <span id="opt3"></span
+      ></label>
+      <label class="option hvr-grow-shadow"
+        ><input type="radio" name="option" value="4"/> <span id="opt4"></span
+      ></label>
+      <button
+        id="nextButton"
+        class="next-btn fontsforweb_fontid_9785 hvr-hollow"
+        onclick=""
+      >
+        Next Question
+      </button>
     </div>
     <div id="result" class="container result" style="display:none;"></div>
     <script src="question.js"></script>
     <script src="quiz_script.js"></script>
     <script>
-        var shuffledQuestions;
-        if (localStorage.getItem("isTakingQuiz") === null)
-            localStorage.setItem("isTakingQuiz", "true");
-        localStorage.setItem("currentQuiz", getUrlParameter('quiz'));
-        console.log("istaking quiz has been set up");
-        $(document).ready(() => {
-            if (JSON.parse(localStorage.getItem("shuffledQuestions")) !== null) {
-                console.log(`questionIndex: ${localStorage.getItem("questionIndex")}`);
-                console.log(`questionNumber: ${localStorage.getItem("questionNumber")}`);
-                console.log(`score: ${localStorage.getItem("score")}`);
-                shuffledQuestions = JSON.parse(localStorage.getItem("shuffledQuestions"));
-                console.log(`shuffledQuestions: ${shuffledQuestions}`);
-                loadQuestion(questionIndex, shuffledQuestions); $("#nextButton").attr("onclick", "loadNextQuestion(shuffledQuestions)");
-            }
-            else {
-                console.log("reshuffled questions");
-                switch (getUrlParameter('quiz')) {
-                    case "inputQuiz": shuffledQuestions = shuffle(inputQuestions); break;
-                    case "outputQuiz": shuffledQuestions = shuffle(outputQuestions); break;
-                    case "storageQuiz": shuffledQuestions = shuffle(storageQuestions); break;
-                };
-                console.log("shuffledQuestiosn" + shuffledQuestions);
-                localStorage.setItem("shuffledQuestions", JSON.stringify(shuffledQuestions));
-                loadQuestion(0, shuffledQuestions); $("#nextButton").attr("onclick", "loadNextQuestion(shuffledQuestions)");
-            }
-
-        });
+      var shuffledQuestions;
+      localStorage.setItem("isTakingQuiz", "true");
+      localStorage.setItem("currentQuiz", getUrlParameter("quiz"));
+      console.log("istaking quiz has been set up");
+      $(document).ready(() => {
+        if (JSON.parse(localStorage.getItem("shuffledQuestions")) !== null) {
+          console.log(
+            `questionIndex: ${localStorage.getItem("questionIndex")}`
+          );
+          console.log(
+            `questionNumber: ${localStorage.getItem("questionNumber")}`
+          );
+          console.log(`score: ${localStorage.getItem("score")}`);
+          shuffledQuestions = JSON.parse(
+            localStorage.getItem("shuffledQuestions")
+          );
+          console.log(`shuffledQuestions: ${shuffledQuestions}`);
+          loadQuestion(questionIndex, shuffledQuestions);
+          $("#nextButton").attr(
+            "onclick",
+            "loadNextQuestion(shuffledQuestions)"
+          );
+        } else {
+          console.log("reshuffled questions");
+          switch (getUrlParameter("quiz")) {
+            case "inputQuiz":
+              shuffledQuestions = shuffle(inputQuestions);
+              break;
+            case "outputQuiz":
+              shuffledQuestions = shuffle(outputQuestions);
+              break;
+            case "storageQuiz":
+              shuffledQuestions = shuffle(storageQuestions);
+              break;
+          }
+          console.log("shuffledQuestiosn" + shuffledQuestions);
+          localStorage.setItem(
+            "shuffledQuestions",
+            JSON.stringify(shuffledQuestions)
+          );
+          loadQuestion(0, shuffledQuestions);
+          $("#nextButton").attr(
+            "onclick",
+            "loadNextQuestion(shuffledQuestions)"
+          );
+        }
+      });
     </script>
     <script src="sweetalert2.all.min.js"></script>
     <script src="jquery.js"></script>
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
     </script>
-</body>
-
+  </body>
 </html>
