@@ -126,8 +126,6 @@ function loadNextQuestion(questionsArray) {
               localStorage.setItem("completedStorageQuiz", true);
               break;
           }
-          checkIfCourseIsCompleted();
-
           window.location.href = "../main.html";
         });
         localStorage.removeItem("questionIndex");
@@ -157,7 +155,6 @@ function loadNextQuestion(questionsArray) {
             break;
         }
         localStorage.removeItem("currentQuiz");
-        checkIfCourseIsCompleted();
         window.location.href = "../main.html";
       });
     }
@@ -187,22 +184,4 @@ function shuffle(questions) {
     questions[randomIndex] = temporaryValue;
   }
   return questions;
-}
-
-function checkIfCourseIsCompleted(){
-  if(JSON.parse(localStorage.getItem("completedInputQuiz"))===true && JSON.parse(localStorage.getItem("completedInputQuiz"))===true&&JSON.parse(localStorage.getItem("completedInputQuiz"))===true){
-    Swal.fire({
-      title: "Course Completed",
-      text: `Congratulations, you've completed the course, the system will now reset, please inform your instructor.`,
-      type: "confirm"
-    }).then((result)=>{
-      if(result){
-        localStorage.clear();
-        window.location.href="../index.html";
-      }
-    })
-  }
-  else{
-    return;
-  }
 }
