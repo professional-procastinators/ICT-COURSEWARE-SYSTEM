@@ -198,7 +198,6 @@ function checkIfCourseIsCompleted(){
     }).then((result)=>{
       if(result){
         localStorage.clear();
-        window.location.href="../index.html";
       }
     })
   }
