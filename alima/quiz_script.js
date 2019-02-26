@@ -105,6 +105,7 @@ function loadNextQuestion(questionsArray) {
             localStorage.removeItem("score");
             localStorage.removeItem("currentQuiz");
             window.location.href = "../main.html";
+            localStorage.setItem("isTakingQuiz", false);
           }
         });
       } else {
