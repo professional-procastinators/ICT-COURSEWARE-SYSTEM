@@ -84,6 +84,19 @@
             </form>
             <script>
                 $(document).ready(() => {
+                    if(JSON.parse(localStorage.getItem("completedInputQuiz"))===true&&JSON.parse(localStorage.getItem("completedOutputQuiz"))===true&&JSON.parse(localStorage.getItem("completedStorageQuiz"))===true){
+                        localStorage.clear();
+                        Swal.fire({
+                                    title: `Course Completed`,
+                                    text: `You've completed the course! The system will now reset...`,
+                                    type: 'info',
+                                    confirmButton: 'OK'
+                                }).then(()=>{
+                                    window.location.href="../index.html";
+                                });
+                    }
+
+
                     $(".quiz").find('img').click((e) => {
                         $("#selectedQuiz").attr("value", e.target.id);
                         let inputLessonsMap;
