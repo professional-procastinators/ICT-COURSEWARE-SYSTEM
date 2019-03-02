@@ -185,3 +185,10 @@ function shuffle(questions) {
   }
   return questions;
 }
+
+function loadBackQuestion(shuffledQuestion){
+  questionIndex--;
+  score--;
+  questionNumber--;
+  loadQuestion(questionIndex,shuffledQuestions);
+}
